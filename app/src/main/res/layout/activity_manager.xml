@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F0"
+    android:padding="16dp">
+
+    <!-- اسم المكتب -->
+    <TextView
+        android:id="@+id/tv_office_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="مكتب Sonic Taxi للخدمات"
+        android:textColor="#5D4037"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- كارد الإضافة -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/et_driver_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="اسم العضو/السائق"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/et_driver_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="رقم الهاتف"
+                android:inputType="phone"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- الحقل الذي كان مفقوداً في XML -->
+            <EditText
+                android:id="@+id/et_driver_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="موديل السيارة"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btn_add_driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="إضافة عضو للمكتب"
+                android:backgroundTint="#5D4037"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- قائمة الأعضاء -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="أعضاء المكتب المسجلين:"
+        android:textColor="#5D4037"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/drivers_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

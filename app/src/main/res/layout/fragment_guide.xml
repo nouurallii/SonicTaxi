@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF9F6"> <!-- لون ترابي فاتح جداً -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مرحباً بك في سونيك تاكسي"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#8B7355"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=".\n
+                    1. حدد وجهتك بدقة: استخدم شريط البحث أو اضغط مباشرة على الخريطة لتحديد مكان الانطلاق والوصول.\n\n
+                    2. اختر فئة السيارة: نحن نوفر لك أسطولاً من سيارات 'سونيك' المودرن المجهزة لراحتك.\n\n
+                    3. اطلب بضغطة زر: تأكد من تفاصيل الرحلة ثم اضغط 'اطلب سونيك' ليتم مطابقتك مع أقرب سائق.\n\n
+                    4. تتبع رحلتك لحظياً: ستظهر لك سيارة سونيك وهي تتحرك على الخريطة، لتصلك في أسرع وقت ممكن.\n\n
+                    5. تفاصيل السائق: عند قبول الطلب، ستظهر لك بيانات السائق ومعلومات السيارة لضمان أمانك.\n\n
+                    6. التقييم والملاحظات: بعد انتهاء رحلتك، لا تنسَ تقييم تجربتك معنا لنستمر في تطوير مستوى الخدمة.\n\n
+                    7. أمانك أولويتنا: نظام سونيك تاكسي يضمن خصوصية رحلاتك وتشفير بياناتك بالكامل."
+            android:textSize="16sp"
+            android:textColor="#5D4037"
+            android:lineSpacingExtra="10dp" />
+
+
+    </LinearLayout>
+</ScrollView>

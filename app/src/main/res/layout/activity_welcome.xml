@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F5F0"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="مرحباً بك في Sonic Taxi "
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#5D4037"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- زر السائق -->
+    <Button
+        android:id="@+id/btn_driver_entry"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="دخول كـ سائق"
+        android:backgroundTint="#8D6E63"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="30dp"/>
+    <!-- زر المدير -->
+    <Button
+        android:id="@+id/btn_manager_entry"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="دخول كـ مدير مكتب"
+        android:backgroundTint="#5D4037"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="30dp"/>
+
+    <!-- زر الزبون -->
+    <Button
+        android:id="@+id/btn_customer_entry"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="دخول كـ زبون"
+        android:backgroundTint="#A1887F"
+        app:cornerRadius="30dp"/>
+
+</LinearLayout>

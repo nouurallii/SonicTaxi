@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFBF9"
+    tools:context=".RatingActivity">
+
+    <!-- عنوان الشاشة -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="كيف كانت رحلتك؟"
+        android:textColor="#4E342E"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- تقييم السعر -->
+    <TextView
+        android:id="@+id/lbl_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="مدى عدالة السعر"
+        android:textColor="#5D4037"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/rb_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <RatingBar
+        android:id="@+id/rb_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:progressTint="#FFCC80"
+        android:stepSize="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_price" />
+
+    <!-- تقييم السرعة -->
+    <TextView
+        android:id="@+id/lbl_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="سرعة الاستجابة والقيادة"
+        android:textColor="#5D4037"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/rb_speed"
+        app:layout_constraintTop_toBottomOf="@+id/rb_price" />
+
+    <RatingBar
+        android:id="@+id/rb_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:progressTint="#FFCC80"
+        android:stepSize="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_speed" />
+
+    <!-- زر الإنهاء -->
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#5D4037"
+        android:text="إرسال التقييم"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

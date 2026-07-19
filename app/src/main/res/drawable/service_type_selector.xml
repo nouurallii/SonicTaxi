@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  هذا الملف الوحيد الجديد بمجلد drawable.
+  بيربط بين bg_service_normal.xml و bg_service_selected.xml
+  الموجودين أصلاً بمشروعك، حسب حالة التحديد (selected) لبطاقة نوع الخدمة.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_service_selected" android:state_selected="true" />
+    <item android:drawable="@drawable/bg_service_normal" />
+</selector>

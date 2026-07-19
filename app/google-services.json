@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "134126968274",
+    "project_id": "sonic-taxi-3692e",
+    "storage_bucket": "sonic-taxi-3692e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134126968274:android:c641ce917233cfa4ff7c0b",
+        "android_client_info": {
+          "package_name": "com.app.sonictaxi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCriHgJXfb8W9_Sm7IyB8Yfw3afLSIUGdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

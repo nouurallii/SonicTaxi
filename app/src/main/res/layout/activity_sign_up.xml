@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F0"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text=" أنشئ حساب "
+            android:textColor="#5D4037"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- الحقول المشتركة لجميع الأدوار -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:boxStrokeColor="#8D6E63"
+            app:hintTextColor="#8D6E63"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusBottomEnd="30dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint=" الاسم بالكامل "
+                android:textColor="#5D4037" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:boxStrokeColor="#8D6E63"
+            app:hintTextColor="#8D6E63"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusBottomEnd="30dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint=" البريد الإلكتروني "
+                android:inputType="textEmailAddress"
+                android:textColor="#5D4037" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:boxStrokeColor="#8D6E63"
+            app:hintTextColor="#8D6E63"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#8D6E63">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint=" كلمة المرور "
+                android:inputType="textPassword"
+                android:textColor="#5D4037" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- حقل تأكيد كلمة المرور (يظهر دائماً للكل) -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:boxStrokeColor="#8D6E63"
+            app:hintTextColor="#8D6E63"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#8D6E63">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint=" تأكيد كلمة المرور "
+                android:inputType="textPassword"
+                android:textColor="#5D4037" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- اختيار الدور -->
+        <RadioGroup
+            android:id="@+id/rgRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbCustomer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" زبون " android:textColor="#5D4037" android:buttonTint="#8D6E63" android:layout_marginEnd="10dp"/>
+            <RadioButton android:id="@+id/rbDriver" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" سائق " android:textColor="#5D4037" android:buttonTint="#8D6E63" android:layout_marginEnd="10dp"/>
+            <RadioButton android:id="@+id/rbOffice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" مكتب " android:textColor="#5D4037" android:buttonTint="#8D6E63"/>
+        </RadioGroup>
+
+        <!-- الحقول الخاصة بالمكتب -->
+        <LinearLayout
+            android:id="@+id/llOfficeDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:boxStrokeColor="#8D6E63"
+                app:hintTextColor="#8D6E63"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxCornerRadiusTopEnd="30dp"
+                app:boxCornerRadiusBottomStart="30dp"
+                app:boxCornerRadiusBottomEnd="30dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etOfficeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint=" اسم المكتب "
+                    android:textColor="#5D4037" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- الحقول الخاصة بالسائق -->
+        <LinearLayout
+            android:id="@+id/llDriverDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:boxStrokeColor="#8D6E63"
+                app:hintTextColor="#8D6E63"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxCornerRadiusTopEnd="30dp"
+                app:boxCornerRadiusBottomStart="30dp"
+                app:boxCornerRadiusBottomEnd="30dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etOfficeCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint=" كود الانضمام للمكتب "
+                    android:textColor="#5D4037" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:text=" إنشاء حساب "
+            android:backgroundTint="#8D6E63"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="30dp" />
+        <TextView
+            android:id="@+id/tv_login_redirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="هل لديك حساب بالفعل؟ سجل دخولك"
+            android:textColor="#5D4037"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+</ScrollView>

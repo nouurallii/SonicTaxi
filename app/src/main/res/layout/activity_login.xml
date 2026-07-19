@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F0"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_ride"
+        app:tint="#8D6E63"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#8D6E63"
+        app:boxStrokeWidth="1.5dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:hintTextColor="#8D6E63"
+        android:textColorHint="#A1887F">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint=" البريد الإلكتروني "
+            android:inputType="textEmailAddress"
+            android:textColor="#5D4037" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#8D6E63"
+        app:boxStrokeWidth="1.5dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:hintTextColor="#8D6E63"
+        android:textColorHint="#A1887F"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#8D6E63">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint=" كلمة المرور "
+            android:inputType="textPassword"
+            android:textColor="#5D4037" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical">
+
+        <CheckBox android:id="@+id/cbRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" تذكرني "
+            android:textColor="#5D4037"
+            android:buttonTint="#8D6E63"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" نسيت كلمة المرور؟ "
+            android:textColor="#8D6E63"/>
+    </LinearLayout>
+
+    <Button android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#8D6E63"
+        android:text=" تسجيل الدخول "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGuestLogin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:text=" الدخول كضيف "
+        android:textColor="#8D6E63"
+        android:textStyle="bold"
+        app:strokeColor="#8D6E63"
+        app:strokeWidth="2dp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView android:id="@+id/tvSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" أنشئ حساب "
+            android:textColor="#8D6E63"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ليس لديك حساب؟ "
+            android:textColor="#5D4037" />
+    </LinearLayout>
+</LinearLayout>

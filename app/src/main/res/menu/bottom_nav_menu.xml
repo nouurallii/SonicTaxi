@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_guide"
+        android:icon="@drawable/ic_layers"
+        android:title="الإرشادات"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_trips"
+        android:icon="@drawable/ic_ride"
+        android:title="الرحلات"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="الرئيسية"
+        app:showAsAction="ifRoom" />
+
+</menu>

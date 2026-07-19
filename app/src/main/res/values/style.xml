@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="bg_yellow">
+    <item name="android:layout_width">2dp</item>
+    <item name="android:layout_margin">6dp</item>
+    <item name="android:backgroundTint">#FFD600</item>
+    <item name="android:radius">40dp</item>
+    </style>
+
+</resources>
