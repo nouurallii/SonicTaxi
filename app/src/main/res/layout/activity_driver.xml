@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- خريطة OSMDroid -->
     <org.osmdroid.views.MapView
         android:id="@+id/driver_mapView"
         android:layout_width="0dp"
@@ -15,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- زر تسجيل الخروج -->
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
@@ -28,7 +26,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- بطاقة الطلب -->
     <androidx.cardview.widget.CardView
         android:id="@+id/request_card"
         android:layout_width="0dp"
@@ -42,7 +39,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- (بقية محتويات الـ CardView كما هي في كودك السابق) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,6 +53,17 @@
                 android:textColor="#5D4037"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <!-- هذا هو الجزء المضاف لعرض الوجهة -->
+            <TextView
+                android:id="@+id/tv_destination_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="الوجهة: جاري التحميل..."
+                android:textAlignment="center"
+                android:textColor="#333333"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/et_price_offer"

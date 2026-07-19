@@ -8,7 +8,6 @@
     android:background="#FDFBF9"
     tools:context=".RatingActivity">
 
-    <!-- عنوان الشاشة -->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
@@ -22,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- تقييم السعر -->
     <TextView
         android:id="@+id/lbl_price"
         android:layout_width="wrap_content"
@@ -46,7 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lbl_price" />
 
-    <!-- تقييم السرعة -->
     <TextView
         android:id="@+id/lbl_speed"
         android:layout_width="wrap_content"
@@ -70,7 +67,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lbl_speed" />
 
-    <!-- زر الإنهاء -->
     <Button
         android:id="@+id/btn_finish"
         android:layout_width="0dp"

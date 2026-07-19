@@ -145,7 +145,6 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <!-- الحقول الخاصة بالسائق -->
         <LinearLayout
             android:id="@+id/llDriverDetails"
             android:layout_width="match_parent"

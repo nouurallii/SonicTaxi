@@ -17,7 +17,6 @@
         android:textColor="#5D4037"
         android:layout_marginBottom="40dp"/>
 
-    <!-- زر السائق -->
     <Button
         android:id="@+id/btn_driver_entry"
         android:layout_width="match_parent"
@@ -26,7 +25,6 @@
         android:backgroundTint="#8D6E63"
         android:layout_marginBottom="16dp"
         app:cornerRadius="30dp"/>
-    <!-- زر المدير -->
     <Button
         android:id="@+id/btn_manager_entry"
         android:layout_width="match_parent"
@@ -36,7 +34,6 @@
         android:layout_marginBottom="16dp"
         app:cornerRadius="30dp"/>
 
-    <!-- زر الزبون -->
     <Button
         android:id="@+id/btn_customer_entry"
         android:layout_width="match_parent"

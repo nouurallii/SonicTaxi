@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="#F5F5F0">
 
-    <!-- حاوية الصفحات (هنا ستظهر شاشة الإرشادات أو الرحلات أو الرئيسية) -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -17,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- القائمة السفلية بالألوان الترابية المعتمدة -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

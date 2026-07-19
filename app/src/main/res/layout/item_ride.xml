@@ -38,7 +38,6 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
-        <!-- رمز التقييم -->
         <TextView
             android:id="@+id/tv_ride_rating"
             android:layout_width="wrap_content"

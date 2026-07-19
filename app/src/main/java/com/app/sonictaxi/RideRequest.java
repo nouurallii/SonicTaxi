@@ -6,42 +6,29 @@ public class RideRequest {
     private String customerID;
     private double pickupLat, pickupLng;
     private String destination;
+    private String pickupLocation; // تم إضافة حقل الموقع النصي
 
-    // نظام التفاوض
-    private double offerPrice; // السعر الذي يقترحه السائق في لحظة التفاوض
-    private double finalPrice; // السعر الذي اتفق عليه الطرفان
+    private double offerPrice;
+    private double finalPrice;
 
     private double rating;
     private String driverId;
     private String officeId;
-    private long timestamp; // لتنظيم الرحلات زمنياً
+    private long timestamp;
 
     public RideRequest() {}
 
-    public RideRequest(String status, String customerID, double pickupLat, double pickupLng, String destination) {
+    public RideRequest(String status, String customerID, double pickupLat, double pickupLng, String destination, String pickupLocation) {
         this.status = status;
         this.customerID = customerID;
         this.pickupLat = pickupLat;
         this.pickupLng = pickupLng;
         this.destination = destination;
+        this.pickupLocation = pickupLocation;
         this.timestamp = System.currentTimeMillis();
     }
 
-
-
-    public String getDestination() { return destination; }
-    public void setDestination(String destination) { this.destination = destination; }
-
-    public double getOfferPrice() { return offerPrice; }
-    public void setOfferPrice(double offerPrice) { this.offerPrice = offerPrice; }
-
-    public double getFinalPrice() { return finalPrice; }
-    public void setFinalPrice(double finalPrice) { this.finalPrice = finalPrice; }
-
-    public long getTimestamp() { return timestamp; }
-    public void setTimestamp(long timestamp) { this.timestamp = timestamp; }
-
-    // إضافة دوال الـ Getters والـ Setters المفقودة
+    // Getters and Setters
     public String getRideId() { return rideId; }
     public void setRideId(String rideId) { this.rideId = rideId; }
 
@@ -57,6 +44,18 @@ public class RideRequest {
     public double getPickupLng() { return pickupLng; }
     public void setPickupLng(double pickupLng) { this.pickupLng = pickupLng; }
 
+    public String getDestination() { return destination; }
+    public void setDestination(String destination) { this.destination = destination; }
+
+    public String getPickupLocation() { return pickupLocation; }
+    public void setPickupLocation(String pickupLocation) { this.pickupLocation = pickupLocation; }
+
+    public double getOfferPrice() { return offerPrice; }
+    public void setOfferPrice(double offerPrice) { this.offerPrice = offerPrice; }
+
+    public double getFinalPrice() { return finalPrice; }
+    public void setFinalPrice(double finalPrice) { this.finalPrice = finalPrice; }
+
     public double getRating() { return rating; }
     public void setRating(double rating) { this.rating = rating; }
 
@@ -66,5 +65,6 @@ public class RideRequest {
     public String getOfficeId() { return officeId; }
     public void setOfficeId(String officeId) { this.officeId = officeId; }
 
-
+    public long getTimestamp() { return timestamp; }
+    public void setTimestamp(long timestamp) { this.timestamp = timestamp; }
 }
