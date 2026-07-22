@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,10 +37,11 @@ public class ManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manager);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        // جلب الـ UID الخاص بالمدير الذي سجل دخوله حالياً
-        currentManagerId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        // 1. ربط العناصر
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            currentManagerId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        }
+
         tvOfficeName = findViewById(R.id.tv_office_name);
         etDriverName = findViewById(R.id.et_driver_name);
         etDriverPhone = findViewById(R.id.et_driver_phone);
@@ -46,17 +49,38 @@ public class ManagerActivity extends AppCompatActivity {
         btnAddDriver = findViewById(R.id.btn_add_driver);
         rvDrivers = findViewById(R.id.drivers_recycler);
 
-        // 2. إعداد قائمة السائقين التابعين لهذا المدير فقط
         rvDrivers.setLayoutManager(new LinearLayoutManager(this));
 
+        // جلب السائقين التابعين للمدير الحالي فقط باستخدام managerId
         FirebaseRecyclerOptions<Driver> options = new FirebaseRecyclerOptions.Builder<Driver>()
                 .setQuery(mDatabase.child("Users/Drivers").orderByChild("managerId").equalTo(currentManagerId), Driver.class)
                 .build();
 
-        driverAdapter = new DriverAdapter(options);
-        rvDrivers.setAdapter(driverAdapter);
+        driverAdapter = new DriverAdapter(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull DriverViewHolder holder, int position, @NonNull Driver model) {
+                super.onBindViewHolder(holder, position, model);
 
-        // 3. زر الإضافة
+                // إمكانية حذف أو إلغاء السائق من المكتب بالضغط المطول على العنصر
+                holder.itemView.setOnLongClickListener(v -> {
+                    new AlertDialog.Builder(ManagerActivity.this)
+                            .setTitle("إلغاء السائق")
+                            .setMessage("هل أنت متأكد من حذف هذا السائق من مكتبك؟")
+                            .setPositiveButton("نعم", (dialog, which) -> {
+                                getRef(position).removeValue().addOnSuccessListener(aVoid -> {
+                                    Toast.makeText(ManagerActivity.this, "تم إلغاء السائق بنجاح", Toast.LENGTH_SHORT).show();
+                                }).addOnFailureListener(e -> {
+                                    Toast.makeText(ManagerActivity.this, "فشل الحذف", Toast.LENGTH_SHORT).show();
+                                });
+                            })
+                            .setNegativeButton("إلغاء", null)
+                            .show();
+                    return true;
+                });
+            }
+        };
+
+        rvDrivers.setAdapter(driverAdapter);
         btnAddDriver.setOnClickListener(v -> addDriverToSystem());
     }
 
@@ -70,7 +94,6 @@ public class ManagerActivity extends AppCompatActivity {
             return;
         }
 
-        // إنشاء ID فريد للسائق باستخدام push()
         DatabaseReference newDriverRef = mDatabase.child("Users/Drivers").push();
 
         Map<String, Object> driverMap = new HashMap<>();
@@ -78,7 +101,7 @@ public class ManagerActivity extends AppCompatActivity {
         driverMap.put("phone", phone);
         driverMap.put("carModel", car);
         driverMap.put("status", "Pending");
-        driverMap.put("managerId", currentManagerId); // الربط الجوهري
+        driverMap.put("managerId", currentManagerId);
 
         newDriverRef.setValue(driverMap)
                 .addOnCompleteListener(task -> {
@@ -88,7 +111,7 @@ public class ManagerActivity extends AppCompatActivity {
                         etDriverPhone.setText("");
                         etDriverCar.setText("");
                     } else {
-                        Toast.makeText(this, "فشل الإضافة: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "فشل الإضافة", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
