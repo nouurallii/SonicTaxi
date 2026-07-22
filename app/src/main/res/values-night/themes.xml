@@ -1,7 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.SonicTaxi" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Theme.SonicTaxi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#121212</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="colorPrimary">#121212</item>
+        <item name="colorPrimaryVariant">#121212</item>
+        <item name="colorSecondary">#FFD600</item>
+
+        <!-- ألوان النصوص والعناصر العامة لتكون بيضاء وواضحة -->
+        <item name="colorOnSurface">@color/app_white</item>
+        <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
+    </style>
+
+    <!-- سستايل خاص لحقول الإدخال يضمن أن الـ Hint والكتابة أبيض ناصع دائماً -->
+    <style name="WhiteHintTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextColor">@color/accent_yellow</item>
+        <item name="android:textColorHint">@color/app_white</item>
     </style>
 </resources>

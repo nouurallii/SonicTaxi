@@ -3,80 +3,85 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F0"
+    android:background="#1B1A1A"
     android:orientation="vertical"
     android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
 
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_ride"
-        app:tint="#8D6E63"/>
+        app:tint="#FFD600"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/WhiteHintTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#8D6E63"
-        app:boxStrokeWidth="1.5dp"
+        app:boxStrokeColor="@color/accent_yellow"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/accent_yellow"
         app:boxCornerRadiusTopStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
-        app:boxCornerRadiusBottomEnd="30dp"
-        app:hintTextColor="#8D6E63"
-        android:textColorHint="#A1887F">
+        app:boxCornerRadiusBottomEnd="30dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint=" البريد الإلكتروني "
+            android:hint="البريد الإلكتروني"
             android:inputType="textEmailAddress"
-            android:textColor="#5D4037" />
+            android:textColor="#FBFAF9"
+            android:textColorHint="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/WhiteHintTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#8D6E63"
-        app:boxStrokeWidth="1.5dp"
+        app:boxStrokeColor="@color/accent_yellow"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/accent_yellow"
         app:boxCornerRadiusTopStart="30dp"
         app:boxCornerRadiusTopEnd="30dp"
         app:boxCornerRadiusBottomStart="30dp"
         app:boxCornerRadiusBottomEnd="30dp"
-        app:hintTextColor="#8D6E63"
-        android:textColorHint="#A1887F"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#8D6E63">
+        app:passwordToggleTint="#FFD600">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint=" كلمة المرور "
+            android:hint="كلمة المرور"
             android:inputType="textPassword"
-            android:textColor="#5D4037" />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical">
 
-        <CheckBox android:id="@+id/cbRememberMe"
+        <CheckBox
+            android:id="@+id/cbRememberMe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" تذكرني "
-            android:textColor="#5D4037"
-            android:buttonTint="#8D6E63"/>
+            android:textColor="#FFD600"
+            android:buttonTint="#FFD600"/>
 
         <View
             android:layout_width="0dp"
@@ -87,29 +92,32 @@
             android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" نسيت كلمة المرور؟ "
-            android:textColor="#8D6E63"/>
+            android:text="نسيت كلمة المرور؟"
+            android:textColor="#FFD600"/>
     </LinearLayout>
 
-    <Button android:id="@+id/btnLogin"
+    <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#8D6E63"
-        android:text=" تسجيل الدخول "
-        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFD600"
+        android:text="تسجيل الدخول"
+        android:textColor="#050505"
         android:textStyle="bold"
+        android:textSize="16sp"
         app:cornerRadius="30dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGuestLogin"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginTop="15dp"
-        android:text=" الدخول كضيف "
-        android:textColor="#8D6E63"
+        android:layout_marginTop="12dp"
+        android:text="الدخول كضيف"
+        android:textColor="#EFEB09"
         android:textStyle="bold"
-        app:strokeColor="#8D6E63"
+        android:textSize="16sp"
+        app:strokeColor="#FFD600"
         app:strokeWidth="2dp"
         app:backgroundTint="@android:color/transparent"
         app:cornerRadius="30dp" />
@@ -118,19 +126,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
-        <TextView android:id="@+id/tvSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" أنشئ حساب "
-            android:textColor="#8D6E63"
-            android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" ليس لديك حساب؟ "
-            android:textColor="#5D4037" />
+            android:text="ليس لديك حساب؟ "
+            android:textColor="#FFD600" />
+
+        <TextView
+            android:id="@+id/tvSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="أنشئ حساب"
+            android:textColor="#F2F2EE"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

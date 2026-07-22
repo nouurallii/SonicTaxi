@@ -3,10 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp"
-    app:cardBackgroundColor="#FFFFFF">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#252424"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +18,7 @@
         android:padding="16dp"
         android:gravity="center_vertical">
 
+        <!-- تفاصيل الرحلة أو العنصر -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -26,33 +30,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="الحالة: مكتملة"
-                android:textColor="#5D4037"
-                android:textStyle="bold" />
+                android:textColor="#FFD600"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
 
             <TextView
                 android:id="@+id/tv_ride_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="السعر: 15 شيكل"
-                android:textColor="#8D6E63"
-                android:textSize="18sp" />
+                android:textColor="#E0E0E0"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- التقييم والنجوم -->
         <TextView
             android:id="@+id/tv_ride_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="★ 5.0"
-            android:textColor="#FFB300"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="#FFD600"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp" />
+
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="إيقاف السائق"
+            android:backgroundTint="#B71C1C"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:cornerRadius="21dp"
+            android:layout_marginStart="8dp"
+            android:elevation="2dp" />
+
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_action"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="إيقاف السائق"
-        android:backgroundTint="#D32F2F"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp" />
 </androidx.cardview.widget.CardView>

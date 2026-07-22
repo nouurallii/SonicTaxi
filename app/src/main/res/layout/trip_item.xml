@@ -1,40 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardBackgroundColor="#3E362E"
-    app:cardCornerRadius="12dp">
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="#252424"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tvPassengerName"
-            android:text="Passenger Name"
-            android:textColor="#EFEBE9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اسم الراكب"
+            android:textColor="#FFD600"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tvPickupLocation"
-            android:text="Pickup: Location"
-            android:textColor="#A68977"
-            android:layout_marginTop="4dp"/>
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="منطقة الانطلاق: الموقع"
+            android:textColor="#B0B0B0"
+            android:textSize="13sp"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
             android:id="@+id/btnAccept"
-            android:text="Accept Trip"
-            android:backgroundTint="#8D6E63"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="8dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="قبول الرحلة"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FFD600"
+            android:textColor="#1B1A1A"
+            app:cornerRadius="22.5dp"
+            android:elevation="2dp"/>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
 
     <org.osmdroid.views.MapView
         android:id="@+id/mapView"
@@ -14,11 +17,12 @@
         android:layout_height="65dp"
         android:layout_gravity="bottom"
         android:layout_margin="20dp"
-        android:backgroundTint="#8B7355"
+        android:backgroundTint="#FFD600"
         android:text="اطلب سونيك تاكسي الآن"
-        android:textColor="#FFFFFF"
+        android:textColor="#1B1A1A"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:elevation="10dp" />
+        android:elevation="12dp"
+        app:cornerRadius="32dp" />
 
 </FrameLayout>

@@ -2,39 +2,364 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF9F6">
+    android:background="#1B1A1A"
+    android:fillViewport="true"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="مرحباً بك في سونيك تاكسي"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#8B7355"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"/>
 
-
-        <TextView
+        <!-- ترويسة الصفحة -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=".\n
-                    1. حدد وجهتك بدقة: استخدم شريط البحث أو اضغط مباشرة على الخريطة لتحديد مكان الانطلاق والوصول.\n\n
-                    2. اختر فئة السيارة: نحن نوفر لك أسطولاً من سيارات 'سونيك' المودرن المجهزة لراحتك.\n\n
-                    3. اطلب بضغطة زر: تأكد من تفاصيل الرحلة ثم اضغط 'اطلب سونيك' ليتم مطابقتك مع أقرب سائق.\n\n
-                    4. تتبع رحلتك لحظياً: ستظهر لك سيارة سونيك وهي تتحرك على الخريطة، لتصلك في أسرع وقت ممكن.\n\n
-                    5. تفاصيل السائق: عند قبول الطلب، ستظهر لك بيانات السائق ومعلومات السيارة لضمان أمانك.\n\n
-                    6. التقييم والملاحظات: بعد انتهاء رحلتك، لا تنسَ تقييم تجربتك معنا لنستمر في تطوير مستوى الخدمة.\n\n
-                    7. أمانك أولويتنا: نظام سونيك تاكسي يضمن خصوصية رحلاتك وتشفير بياناتك بالكامل."
-            android:textSize="16sp"
-            android:textColor="#5D4037"
-            android:lineSpacingExtra="10dp" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="24dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="دليل استخدام SonicTaxi"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFD600"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تعرف على خطوات حجز رحلتك بكل سهولة"
+                android:textSize="13sp"
+                android:textColor="#B0B0B0" />
+        </LinearLayout>
+
+        <!-- حاوية الخطوات -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- عنصر الخطوة الأولى -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="1"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="حدد وجهتك بدقة"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="استخدم شريط البحث أو اضغط مباشرة على الخريطة لتحديد مكان الانطلاق والوصول."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- عنصر الخطوة الثانية -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="2"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="اختر فئة السيارة"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="نوفّر لك أسطولاً من سيارات 'سونيك' المودرن المجهزة لراحتك."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- عنصر الخطوة الثالثة -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="3"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="اطلب بضغطة زر"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="تأكد من تفاصيل الرحلة ثم اضغط 'اطلب سونيك' ليتم مطابقتك مع أقرب سائق."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- عنصر الخطوة الرابعة -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="4"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="تتبع رحلتك لحظياً"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ستظهر لك سيارة سونيك وهي تتحرك على الخريطة لتصلك في أسرع وقت."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- عنصر الخطوة الخامسة -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="5"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="تفاصيل السائق"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="عند قبول الطلب، ستظهر لك بيانات السائق ومعلومات السيارة لضمان أمانك."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- عنصر الخطوة السادسة -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="6"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="التقييم والملاحظات"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="بعد انتهاء رحلتك، لا تنسَ تقييم تجربتك معنا لنستمر في تطوير مستوى الخدمة."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- عنصر الخطوة السابعة -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#252424"
+                android:padding="14dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="#FFD600"
+                    android:textColor="#1B1A1A"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:text="7"
+                    android:layout_marginStart="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="أمانك أولويتنا"
+                        android:textColor="#FFD600"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="نظام سونيك تاكسي يضمن خصوصية رحلاتك وتشفير بياناتك بالكامل."
+                        android:textColor="#E0E0E0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
