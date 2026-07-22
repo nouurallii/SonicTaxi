@@ -4,32 +4,55 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.database.*;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.MapView;
+
 import java.util.List;
 import java.util.Locale;
 
 public class PassengerActivity extends AppCompatActivity {
-    private DatabaseReference ridesRef;
-    private DatabaseReference currentRideRef;
+
     private MapView mapView;
     private Marker driverMarker;
     private TextView tvPriceDisplay, tvStatus;
     private EditText etDestination;
     private Button btnAcceptPrice, btnRequestTaxi;
     private String currentRideId;
+
+    // عناصر القائمة الجانبية والشريط السفلي
+    private DrawerLayout drawerLayout;
+    private ImageButton btnMenu;
+    private NavigationView navView;
+    private BottomNavigationView bottomNavigation;
+
+    private DatabaseReference ridesRef;
+    private DatabaseReference currentRideRef;
+
+    private final String DB_URL = "https://sonic-taxi-3692e-default-rtdb.asia-southeast1.firebasedatabase.app";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +62,7 @@ public class PassengerActivity extends AppCompatActivity {
 
         initViews();
 
-        ridesRef = FirebaseDatabase.getInstance("https://sonic-taxi-3692e-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Rides");
+        ridesRef = FirebaseDatabase.getInstance(DB_URL).getReference("Rides");
 
         btnRequestTaxi.setOnClickListener(v -> {
             String destination = etDestination.getText().toString().trim();
@@ -52,22 +75,58 @@ public class PassengerActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        // ربط عناصر الخريطة والطلب
         mapView = findViewById(R.id.mapView);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
         mapView.setMultiTouchControls(true);
         mapView.getController().setZoom(15.0);
-        mapView.getController().setCenter(new GeoPoint(32.2215, 35.2497));
+        mapView.getController().setCenter(new GeoPoint(32.2215, 35.2497)); // إحداثيات نابلس الافتراضية
 
         tvPriceDisplay = findViewById(R.id.tv_price_display);
         tvStatus = findViewById(R.id.status_text);
         etDestination = findViewById(R.id.destination_search);
         btnAcceptPrice = findViewById(R.id.btn_accept_price);
         btnRequestTaxi = findViewById(R.id.btn_request_taxi);
+
+        // ربط عناصر واجهة الـ DrawerLayout والقوائم
+        drawerLayout = findViewById(R.id.drawer_layout);
+        btnMenu = findViewById(R.id.btnMenu);
+        navView = findViewById(R.id.nav_view);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+
+        // تفعيل زر القائمة الجانبية لفتحها وإغلاقها
+        if (btnMenu != null) {
+            btnMenu.setOnClickListener(v -> {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            });
+        }
+
+        // الاستماع لاختيارات القائمة الجانبية
+        if (navView != null) {
+            navView.setNavigationItemSelectedListener(item -> {
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            });
+        }
+
+        // الاستماع لاختيارات الشريط السفلي
+        if (bottomNavigation != null) {
+            bottomNavigation.setOnItemSelectedListener(item -> {
+                return true;
+            });
+        }
     }
 
     private void searchAndGo(final String locationName) {
         tvStatus.setText("جاري تحديد موقع: " + locationName);
-        findViewById(R.id.status_card).setVisibility(View.VISIBLE);
+        View statusCard = findViewById(R.id.status_card);
+        if (statusCard != null) {
+            statusCard.setVisibility(View.VISIBLE);
+        }
         final Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 
         new Thread(() -> {
@@ -160,6 +219,15 @@ public class PassengerActivity extends AppCompatActivity {
             @Override
             public void onError(DatabaseError e) {}
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
